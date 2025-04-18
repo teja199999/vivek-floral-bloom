@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart, Search, User } from "lucide-react";
@@ -61,7 +60,7 @@ const Navbar = () => {
             <button className="hidden md:flex text-gray-700 hover:text-floral-green-dark">
               <Search size={20} />
             </button>
-            <Link to="/account" className="hidden md:flex text-gray-700 hover:text-floral-green-dark">
+            <Link to="/account" className="text-gray-700 hover:text-floral-green-dark">
               <User size={20} />
             </Link>
             
@@ -130,14 +129,13 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <div className="flex items-center space-x-6 py-2">
-              <button className="text-gray-700 hover:text-floral-green-dark">
-                <Search size={20} />
-              </button>
-              <Link to="/account" className="text-gray-700 hover:text-floral-green-dark">
-                <User size={20} />
-              </Link>
-            </div>
+            <Link
+              to="/account"
+              className="block text-gray-700 hover:text-floral-green-dark py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              My Account
+            </Link>
           </nav>
         )}
       </div>
